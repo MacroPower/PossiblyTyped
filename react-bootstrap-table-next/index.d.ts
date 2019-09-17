@@ -333,6 +333,10 @@ overlay={ overlayFactory({ spinner: true, background: 'rgba(192,192,192,0.3)' })
     striped?: boolean;
     /**Same as bootstrap .table-condensed class for making a table more compact by cutting cell padding in half. */
     condensed?: boolean;
+    /** Same as bootstrap .table-hover class for adding mouse hover effect (grey background color) on table rows. */
+    hover?: boolean;
+    /**Customize the style of table rows. */
+    rowClasses?: string;
     defaultSorted?: Sorted[];
     filter?: FilterProps<TODO>;
     pagination?: Pagination;
@@ -386,7 +390,8 @@ There's only one different for dummy column than normal column, which is dummy c
       row: TODO,
       rowIndex: number,
       formatExtraData: any
-    ) => string;
+    ) => string | JSX.Element;
+
     filter?: TODO;
 
     //     column.headerFormatter - [Function]
